@@ -11,6 +11,10 @@ import { doctorCommand } from "./commands/doctor.js";
 import { fixCommand } from "./commands/fix.js";
 import { agentAddCommand } from "./commands/agentAdd.js";
 import { generateCommand } from "./commands/generate.js";
+import { openCommand } from "./commands/open.js";
+import { copyPubCommand } from "./commands/copyPub.js";
+import { revealCommand } from "./commands/reveal.js";
+import { showCommand } from "./commands/show.js";
 
 const program = new Command();
 
@@ -73,5 +77,39 @@ program
   .command("generate")
   .description("Generate SSH key, add to agent and optionally create Host")
   .action(generateCommand);
+
+program
+  .command("open")
+  .argument("[host]", "SSH host alias")
+  .option("-c, --current", "Use SSH profile from current repository origin")
+  .option("--pub", "Open public key")
+  .option("--private", "Open private key")
+  .description("Open SSH key file (public by default)")
+  .action(openCommand);
+
+program
+  .command("copy-pub")
+  .argument("[host]", "SSH host alias")
+  .option("-c, --current", "Use SSH profile from current repository origin")
+  .description("Copy public key to clipboard")
+  .action(copyPubCommand);
+
+program
+  .command("reveal")
+  .argument("[host]", "SSH host alias")
+  .option("-c, --current", "Use SSH profile from current repository origin")
+  .option("--pub", "Reveal public key")
+  .option("--private", "Reveal private key")
+  .description("Reveal SSH key file in Finder (public by default)")
+  .action(revealCommand);
+
+program
+  .command("show")
+  .argument("[host]", "SSH host alias")
+  .option("-c, --current", "Use SSH profile from current repository origin")
+  .option("--pub", "Show public key")
+  .option("--private", "Show private key")
+  .description("Print SSH key content (public by default)")
+  .action(showCommand);
 
 program.parse();
