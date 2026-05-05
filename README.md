@@ -45,6 +45,7 @@ If you use multiple Git accounts across work, personal projects, or different pr
 - Auto-fix common permission issues with `fix`
 - Generate new SSH keys
 - Add keys to `ssh-agent` and macOS Keychain
+- Open, reveal, copy, and inspect SSH key files
 - Install zsh right-prompt integration
 
 ## Requirements
@@ -129,6 +130,52 @@ Test an SSH connection:
 gitkey test
 ```
 
+Open a public key file:
+
+```bash
+gitkey open
+gitkey open --current
+```
+
+Open a private key file explicitly:
+
+```bash
+gitkey open --private
+```
+
+Reveal a key in Finder:
+
+```bash
+gitkey reveal
+gitkey reveal --pub
+```
+
+Reveal a private key in Finder explicitly:
+
+```bash
+gitkey reveal --private
+```
+
+Copy a public key to clipboard:
+
+```bash
+gitkey copy-pub
+gitkey copy-pub --current
+```
+
+Print a public key:
+
+```bash
+gitkey show
+gitkey show --current
+```
+
+Print a private key explicitly:
+
+```bash
+gitkey show --private
+```
+
 ## Example
 
 Given this SSH config:
@@ -201,7 +248,7 @@ gitkey list
 
 ## Limitations
 
-- `agent-add`, `generate`, and `install-shell` are currently optimized for macOS.
+- `agent-add`, `generate`, `install-shell`, `open`, `reveal`, and `copy-pub` are currently optimized for macOS.
 - Prompt integration currently targets `zsh`.
 - SSH profiles are expected to be defined in `~/.ssh/config`.
 
