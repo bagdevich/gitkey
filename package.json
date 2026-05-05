@@ -14,6 +14,7 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
+    "prepack": "npm run build",
     "prepublishOnly": "npm run build",
     "start": "node dist/index.js"
   },
@@ -28,10 +29,22 @@
   ],
   "author": "Vitali Bahadzevich",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagdevich/gitkey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bagdevich/gitkey/issues"
+  },
+  "homepage": "https://github.com/bagdevich/gitkey#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "@inquirer/prompts": "^8.4.2",
     "chalk": "^5.6.2",
