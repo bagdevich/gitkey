@@ -1,0 +1,46 @@
+{
+  "name": "@bagdevich/gitkey",
+  "version": "0.1.0",
+  "description": "CLI for managing Git SSH profiles, keys and repo remotes",
+  "type": "module",
+  "bin": {
+    "gitkey": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "git",
+    "ssh",
+    "ssh-key",
+    "cli",
+    "github",
+    "bitbucket",
+    "macos"
+  ],
+  "author": "Vitali Bahadzevich",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.2",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "execa": "^9.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
