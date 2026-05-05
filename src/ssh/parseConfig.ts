@@ -13,14 +13,7 @@ export function getSshConfigPath() {
   return path.join(os.homedir(), ".ssh", "config");
 }
 
-export function parseSshConfig(): SshHost[] {
-  const configPath = getSshConfigPath();
-
-  if (!fs.existsSync(configPath)) {
-    return [];
-  }
-
-  const content = fs.readFileSync(configPath, "utf8");
+export function parseSshConfigContent(content: string): SshHost[] {
   const lines = content.split(/\r?\n/);
 
   const hosts: SshHost[] = [];
@@ -58,4 +51,16 @@ export function parseSshConfig(): SshHost[] {
   if (current) hosts.push(current);
 
   return hosts;
+}
+
+export function parseSshConfig(): SshHost[] {
+  const configPath = getSshConfigPath();
+
+  if (!fs.existsSync(configPath)) {
+    return [];
+  }
+
+  const content = fs.readFileSync(configPath, "utf8");
+
+  return parseSshConfigContent(content);
 }
