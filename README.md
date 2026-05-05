@@ -1,7 +1,8 @@
 # gitkey
 
 [![npm version](https://img.shields.io/npm/v/%40bagdevich%2Fgitkey)](https://www.npmjs.com/package/@bagdevich/gitkey)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18-339933)](https://nodejs.org/)
+[![CI](https://github.com/bagdevich/gitkey/actions/workflows/ci.yml/badge.svg)](https://github.com/bagdevich/gitkey/actions/workflows/ci.yml)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933)](https://nodejs.org/)
 [![Platform](https://img.shields.io/badge/platform-macOS-black)](#limitations)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
@@ -50,7 +51,7 @@ If you use multiple Git accounts across work, personal projects, or different pr
 
 ## Requirements
 
-- Node.js `>=18`
+- Node.js `>=20`
 - `git`
 - OpenSSH tools such as `ssh`, `ssh-add`, and `ssh-keygen`
 - `zsh` if you want prompt integration
@@ -235,6 +236,7 @@ git clone git@github.com:bagdevich/gitkey.git
 cd gitkey
 
 npm install
+npm test
 npm run dev -- list
 ```
 
