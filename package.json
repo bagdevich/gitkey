@@ -1,6 +1,6 @@
 {
   "name": "@bagdevich/gitkey",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "CLI for managing Git SSH profiles, keys and repo remotes",
   "type": "module",
   "bin": {
@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bagdevich/gitkey.git"
+    "url": "https://github.com/bagdevich/gitkey"
   },
   "bugs": {
     "url": "https://github.com/bagdevich/gitkey/issues"
